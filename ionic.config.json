@@ -1,0 +1,7 @@
+{
+  "name": "ygo-dex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
