@@ -1,0 +1,37 @@
+@import '../../../theme/variables';
+
+:host{
+  width: 100%;
+
+  ion-card {
+    width: 96%;
+    // height: 15em;
+    background: $fourtiary;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    background: $seventiary;
+    position: relative;
+
+    .card-image{
+      height: 100%;
+      padding: 3px;
+      object-fit: initial !important;
+    }
+
+  }
+
+  .banlist-wrapper {
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+
+    img {
+      width: 15%;
+    }
+
+    span{
+      text-shadow: 1px solid black;
+    }
+  }
+
+}

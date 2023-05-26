@@ -1,0 +1,21 @@
+@import '../../../theme/variables';
+
+
+
+.banner-card{
+  width: 100% !important;
+  overflow: hidden;
+  margin: 0 auto;
+  min-height: 360px !important;
+  background: $secondary;
+
+  >ion-img{
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+}
+
+app-card-card {
+  width: 43%;
+  margin-bottom: 10px;
+}

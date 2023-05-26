@@ -1,0 +1,9 @@
+@import '../../../../theme/variables.scss';
+
+.div-banlist{
+  width: 100%;
+
+  >div{
+    border-radius: 10px;
+  }
+}

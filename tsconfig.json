@@ -19,9 +19,16 @@
     "target": "es2022",
     "module": "es2020",
     "lib": [
-      "es2018", 
+      "es2018",
       "dom"
     ],
+    "paths":{
+      "@ygodex/app/*": ["./src/app/*"],
+      "@ygodex/core/*": ["./src/app/core/*"],
+      "@ygodex/features/*": ["./src/app/features/*"],
+      "@ygodex/ui/*": ["./src/app/ui/*"],
+      "@ygodex/views/*": ["./src/views/*"],
+    },
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {

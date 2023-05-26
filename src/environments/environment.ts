@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseEndpoint: 'https://db.ygoprodeck.com/api/v7/',
+  ygoprodeckBaseEndpoint: 'https://ygoprodeck.com/api/',
+  perPage: 14,
 };
 
 /*

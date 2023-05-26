@@ -1,0 +1,19 @@
+@import '../../../theme/variables';
+
+:host{
+  width: 100%;
+
+  ion-card {
+    width: 96%;
+    background: $fourtiary;
+    margin-bottom: 10px;
+    margin: 0 auto;
+
+    .card-image{
+      height: 100%;
+      // object-position: top;
+    }
+
+  }
+
+}
