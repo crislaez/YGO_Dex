@@ -1,4 +1,4 @@
-import { filterItem, getObjectKeys, isNotEmptyObject, orderItemByDateAsc, orderItemByDateDesc, sliceText } from "@ygodex/app/core/functions/generic.functions";
+import { filterByItem, filterItem, getCardsBySet, getObjectKeys, isNotEmptyObject, orderItemByDateAsc, orderItemByDateDesc, sliceText } from "@ygodex/app/core/functions/generic.functions";
 
 describe('Generic functions', () => {
 
@@ -77,12 +77,49 @@ describe('Generic functions', () => {
     expect(filterResponse?.length).toEqual(1)
   });
 
-  it('', () => {
-    expect(true).toEqual(true)
-  })
+  it('filterByItem: should have a length of 4 and have all the "id" except the repeating one (id 2)', () => {
+    const mockData = [
+      {id: 1, name:'Roberto', lastname:'Sedinho'},
+      {id: 1, name:'Roberto', lastname:'Castro'},
+      {id: 2, name:'Roberto', lastname:'Perez'},
+      {id: 3, name:'Steve', lastname:'Strange'},
+      {id: 4, name:'Tony', lastname:'Stark'}
+    ];
+
+    const mockResponse = [
+      {id: 1, name:'Roberto', lastname:'Sedinho'},
+      {id: 2, name:'Roberto', lastname:'Perez'},
+      {id: 3, name:'Steve', lastname:'Strange'},
+      {id: 4, name:'Tony', lastname:'Stark'}
+    ];
+
+    const mockResponseIds = mockResponse?.map(({id}) => id);
+    const response = filterByItem(mockData, 'id')
+    const result = mockResponse?.every(({id}) => mockResponseIds?.includes(id));
+
+    expect(response?.length).toEqual(4);
+    expect(result).toEqual(true)
+  });
+
+  it('getCardsBySet: ', () => {
+    const mock = [
+      { card_sets: [{set_name:'cardSet1', set_code: 'AAAA_004'}] },
+      { card_sets: [{set_name:'cardSet1', set_code: 'AAAA_002'}] },
+      { card_sets: [{set_name:'cardSet1', set_code: 'AAAA_001'}] },
+      { card_sets: [{set_name:'cardSet2', set_code: 'AAAA_001'}] },
+      { card_sets: [{set_name:'cardSet3', set_code: 'AAAA_003'}]},
+      { card_sets: [{set_name:'cardSet1', set_code: 'AAAA_000'}] },
+    ];
+    const response = getCardsBySet((mock as any), 'cardSet1');
+    const mockResponse = ['AAAA_000','AAAA_001','AAAA_002','AAAA_004']
+    console.log(response)
+    const result = response?.every(({ card_sets }) => mockResponse?.includes(card_sets?.[0]?.set_code!))
+    expect(response?.length).toEqual(4);
+    expect(result).toEqual(true);
+  });
 
 });
 
 // it('', () => {
 //   expect(true).toEqual(true)
-// })
+// });

@@ -143,12 +143,12 @@ export const cardsFilter = (cards: Card[] = [], filter: Filter & {name?: string}
 
   let cardFilter = [...(cards ?? [])];
 
-  if(filterName) cardFilter = cardFilter?.filter(item => item?.name?.toLocaleLowerCase()?.includes(filterName?.toLocaleLowerCase()));
-  if(filterType) cardFilter = cardFilter?.filter(item => item?.type === filterType);
-  if(filterAttribute) cardFilter = cardFilter?.filter(item => item?.attribute?.toLocaleLowerCase() === filterAttribute?.toLocaleLowerCase());
-  if(filterRace) cardFilter = cardFilter?.filter(item => item?.race === filterRace);
-  if(filterLevel) cardFilter = cardFilter?.filter(item => item?.level === +filterLevel);
-  if(filterArchetype) cardFilter = cardFilter?.filter(item => item?.archetype === filterArchetype);
+  if(filterName) cardFilter = [...(cardFilter)]?.filter(item => item?.name?.toLocaleLowerCase()?.includes(filterName?.toLocaleLowerCase()));
+  if(filterType) cardFilter = [...(cardFilter)]?.filter(item => item?.type === filterType);
+  if(filterAttribute) cardFilter = [...(cardFilter)]?.filter(item => item?.attribute?.toLocaleLowerCase() === filterAttribute?.toLocaleLowerCase());
+  if(filterRace) cardFilter = [...(cardFilter)]?.filter(item => item?.race === filterRace);
+  if(filterLevel) cardFilter = [...(cardFilter)]?.filter(item => item?.level === +filterLevel);
+  if(filterArchetype) cardFilter = [...(cardFilter)]?.filter(item => item?.archetype === filterArchetype);
 
   return cardFilter;
 }

@@ -141,7 +141,7 @@ export class HomeComponent {
         })
       )
     })
-    // ,tap(d => console.log(d))
+    ,tap(d => console.log(d))
     ,shareReplay(1)
   );
 
