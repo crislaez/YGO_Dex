@@ -101,7 +101,7 @@ describe('Generic functions', () => {
     expect(result).toEqual(true)
   });
 
-  it('getCardsBySet: ', () => {
+  it('getCardsBySet: should have a length of 4 and with the corresponding set_code', () => {
     const mock = [
       { card_sets: [{set_name:'cardSet1', set_code: 'AAAA_004'}] },
       { card_sets: [{set_name:'cardSet1', set_code: 'AAAA_002'}] },
@@ -112,7 +112,6 @@ describe('Generic functions', () => {
     ];
     const response = getCardsBySet((mock as any), 'cardSet1');
     const mockResponse = ['AAAA_000','AAAA_001','AAAA_002','AAAA_004']
-    console.log(response)
     const result = response?.every(({ card_sets }) => mockResponse?.includes(card_sets?.[0]?.set_code!))
     expect(response?.length).toEqual(4);
     expect(result).toEqual(true);
@@ -123,3 +122,7 @@ describe('Generic functions', () => {
 // it('', () => {
 //   expect(true).toEqual(true)
 // });
+// https://ygoprodeck.com/api/tournament/getTournaments.php?&_=spain-national-championship-2023-352
+// https://ygoprodeck.com/tournament/spain-national-championship-2023-352
+
+// https://ygoprodeck.com/api/tournament/getTournaments.php?&_=spain-national-championship-2023-352

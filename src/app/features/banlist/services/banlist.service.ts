@@ -14,8 +14,8 @@ import { orderBanlist } from '@ygodex/core/functions/generic.functions';
 })
 export class BanlistService {
 
-  baseURL: string = this.env.baseEndpoint;
-  banlistCache$ = new BehaviorSubject<Banlist>(null!);
+  private baseURL: string = this.env.baseEndpoint;
+  private banlistCache$ = new BehaviorSubject<Banlist>(null!);
 
 
   constructor(

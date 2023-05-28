@@ -10,8 +10,8 @@ import { Deck } from '../models/deck.models';
 })
 export class DeckService {
 
-  baseURL: string = this.env.ygoprodeckBaseEndpoint;
-  decksCache$ = new BehaviorSubject<Deck[]>([]);
+  private baseURL: string = this.env.ygoprodeckBaseEndpoint;
+  private decksCache$ = new BehaviorSubject<Deck[]>([]);
 
 
   constructor(

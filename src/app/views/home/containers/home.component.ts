@@ -13,9 +13,8 @@ import { Deck, DeckService } from '@ygodex/features/deck';
 import { New, NewService } from '@ygodex/features/new';
 import { Set, SetService } from '@ygodex/features/set';
 import { SliderComponent } from '@ygodex/ui/slider/slider.component';
-import { catchError, forkJoin, map, of, shareReplay, switchMap, tap } from 'rxjs';
+import { catchError, forkJoin, map, of, shareReplay, switchMap } from 'rxjs';
 import { FieldType, HomeInfoIterator } from '../models/home.models';
-import { CardFilterService } from '@ygodex/features/card-filter';
 
 @Component({
   selector: 'app-home',
@@ -141,7 +140,7 @@ export class HomeComponent {
         })
       )
     })
-    ,tap(d => console.log(d))
+    // ,tap(d => console.log(d))
     ,shareReplay(1)
   );
 

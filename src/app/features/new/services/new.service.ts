@@ -10,8 +10,8 @@ import { New } from '../models/new.models';
 })
 export class NewService {
 
-  baseURL: string = this.env.ygoprodeckBaseEndpoint;
-  cardsCache$ = new BehaviorSubject<New[]>([]);
+  private baseURL: string = this.env.ygoprodeckBaseEndpoint;
+  private cardsCache$ = new BehaviorSubject<New[]>([]);
 
 
   constructor(

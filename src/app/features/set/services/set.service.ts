@@ -11,8 +11,8 @@ import { Set } from '../models/set.models';
 })
 export class SetService {
 
-  baseURL: string = this.env.baseEndpoint;
-  setsCache$ = new BehaviorSubject<Set[]>([]);
+  private baseURL: string = this.env.baseEndpoint;
+  private setsCache$ = new BehaviorSubject<Set[]>([]);
 
 
   constructor(

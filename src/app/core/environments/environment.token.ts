@@ -21,6 +21,10 @@ export class Environment {
     return this.env.baseEndpoint
   }
 
+  get ygoprodeckInternalBaseEndpoint(): string {
+    return this.env.ygoprodeckInternalBaseEndpoint
+  }
+
   get ygoprodeckBaseEndpoint(): string {
     return this.env.ygoprodeckBaseEndpoint
   }

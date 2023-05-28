@@ -10,9 +10,9 @@ import { Card } from '../models/card.models';
 })
 export class CardService {
 
-  baseURL: string = this.env.baseEndpoint;
-  cardsCache$ = new BehaviorSubject<Card[]>([]);
-  cardsBySetCodeCache$ = new BehaviorSubject<{[setCode: string]: Card[]}>(null!);
+  private baseURL: string = this.env.baseEndpoint;
+  private cardsCache$ = new BehaviorSubject<Card[]>([]);
+  private cardsBySetCodeCache$ = new BehaviorSubject<{[setCode: string]: Card[]}>(null!);
 
 
   constructor(

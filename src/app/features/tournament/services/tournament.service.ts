@@ -10,8 +10,8 @@ import { TournamentDateOption, TournamentResponse } from '../models/tournament.m
 })
 export class TournamentService {
 
-  baseURL: string = this.env.ygoprodeckBaseEndpoint;
-  tournamnetCache$ = new BehaviorSubject<{ [option:string]:TournamentResponse} >(null!);
+  private baseURL: string = this.env.ygoprodeckBaseEndpoint;
+  private tournamnetCache$ = new BehaviorSubject<{ [option:string]:TournamentResponse} >(null!);
 
 
   constructor(
