@@ -20,6 +20,14 @@ export class DeckService {
   ) { }
 
 
+  get decksCache() {
+    return this.decksCache$.value;
+  }
+
+  set decksCache(decks: Deck[]) {
+    this.decksCache$.next(decks);
+  }
+
   getAll(reload: boolean = false): Observable<Deck[]> {
     if(!reload && this.decksCache$.value?.length > 0){
       return of(this.decksCache$.value)

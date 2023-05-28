@@ -11,7 +11,7 @@ import { TournamentDateOption, TournamentResponse } from '../models/tournament.m
 export class TournamentService {
 
   private baseURL: string = this.env.ygoprodeckBaseEndpoint;
-  private tournamnetCache$ = new BehaviorSubject<{ [option:string]:TournamentResponse} >(null!);
+  private tournamentCache$ = new BehaviorSubject<{ [option:string]:TournamentResponse} >(null!);
 
 
   constructor(
@@ -20,17 +20,28 @@ export class TournamentService {
   ) { }
 
 
+  get tournamentCache() {
+    return this.tournamentCache$.value;
+  }
+
+  set setsCache(tournament: { [option:string]:TournamentResponse }) {
+    this.tournamentCache$.next({
+      ...this.tournamentCache$.value,
+      ...(tournament ?? {})
+    });
+  }
+
   getAll(reload: boolean = false, dateOption: TournamentDateOption = 'Format'): Observable<TournamentResponse> {
-    if(!reload && this.tournamnetCache$.value?.[dateOption]){
-      return of(this.tournamnetCache$.value?.[dateOption])
+    if(!reload && this.tournamentCache$.value?.[dateOption]){
+      return of(this.tournamentCache$.value?.[dateOption])
     }
 
     const params = `?placement=All&tier=2&dateStart=${dateOption}`;
 
     return this.http.get<TournamentResponse>(`${this.baseURL}tournament/getTopArchetypes.php${params}`).pipe(
       map((tournamentResponse) => {
-        this.tournamnetCache$.next({
-          ...this.tournamnetCache$.value,
+        this.tournamentCache$.next({
+          ...this.tournamentCache$.value,
           [dateOption]: tournamentResponse
         });
 

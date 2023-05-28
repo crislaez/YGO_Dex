@@ -20,6 +20,14 @@ export class NewService {
   ) { }
 
 
+  get cardsCache() {
+    return this.cardsCache$.value;
+  }
+
+  set cardsCache(news: New[]) {
+    this.cardsCache$.next(news);
+  }
+
   getAll(reload: boolean = false): Observable<New[]> {
     if(!reload && this.cardsCache$.value?.length > 0){
       return of(this.cardsCache$.value)

@@ -20,6 +20,14 @@ export class CardFilterService {
   ) { }
 
 
+  get cardFilterCache() {
+    return this.cardFilterCache$.value;
+  }
+
+  set cardFilterCache(cardFilter: CardFilter) {
+    this.cardFilterCache$.next(cardFilter);
+  }
+
   getAll(reload: boolean = false): Observable<CardFilter> {
     if(!reload && Object.keys(this.cardFilterCache$.value || {})?.length > 0){
       return of(this.cardFilterCache$.value)

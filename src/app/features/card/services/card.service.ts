@@ -21,6 +21,25 @@ export class CardService {
   ) { }
 
 
+  get cardsCache() {
+    return this.cardsCache$.value;
+  }
+
+  get cardsBySetCodeCache() {
+    return this.cardsBySetCodeCache$.value;
+  }
+
+  set cardsCache(cards: Card[]) {
+    this.cardsCache$.next(cards);
+  }
+
+  set cardsBySetCodeCache(setById: { [setCode: string]: Card[] }) {
+    this.cardsBySetCodeCache$.next({
+      ...this.cardsBySetCodeCache$.value,
+      ...(setById ?? {})
+    });
+  }
+
   getAll(reload: boolean = false): Observable<Card[]> {
     if(!reload && this.cardsCache$.value?.length > 0){
       return of(this.cardsCache$.value)

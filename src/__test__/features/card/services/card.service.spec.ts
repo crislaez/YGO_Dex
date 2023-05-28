@@ -42,7 +42,7 @@ describe('CardService', () => {
     .pipe(take(1))
     .subscribe(cards => {
 
-      expect(cards?.length).toEqual(cardService.cardsCache$.value?.length);
+      expect(cards?.length).toEqual(cardService.cardsCache?.length);
       done();
     })
   });

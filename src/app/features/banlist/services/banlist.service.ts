@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { BanlistType } from '@ygodex/core/enums/banlist-type.enum';
 import { ENVIRONMENT, Environment } from '@ygodex/core/environments/environment.token';
+import { orderBanlist } from '@ygodex/core/functions/generic.functions';
 import { BackendResponse } from '@ygodex/core/models/backend-response.models';
 import { Card } from '@ygodex/features/card';
 import { BehaviorSubject, Observable, forkJoin, of, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Banlist } from '../models/banlist.models';
-import { BanlistType } from '@ygodex/core/enums/banlist-type.enum';
-import { orderBanlist } from '@ygodex/core/functions/generic.functions';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,14 @@ export class BanlistService {
     @Inject(ENVIRONMENT) private env: Environment,
   ) { }
 
+
+  get banlistCache() {
+    return this.banlistCache$.value;
+  }
+
+  set banlistCache(banlist: Banlist) {
+    this.banlistCache$.next(banlist);
+  }
 
   getAll(reload: boolean = false): Observable<Banlist> {
     if(!reload && Object.keys(this.banlistCache$.value || {})?.length > 0){

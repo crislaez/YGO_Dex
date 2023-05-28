@@ -45,7 +45,7 @@ describe('BanlistService', () => {
     .pipe(take(1))
     .subscribe(banlistResponse => {
       const { tcg, ocg } = banlistResponse || {}
-      const { tcg: tcgCache, ocg: ocgCache } = banlistService.banlistCache$.value || {};
+      const { tcg: tcgCache, ocg: ocgCache } = banlistService.banlistCache || {};
 
       expect(tcg?.length).toEqual(tcgCache?.length);
       expect(ocg?.length).toEqual(ocgCache?.length);

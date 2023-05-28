@@ -21,6 +21,14 @@ export class SetService {
   ) { }
 
 
+  get setsCache() {
+    return this.setsCache$.value;
+  }
+
+  set setsCache(sets: Set[]) {
+    this.setsCache$.next(sets);
+  }
+
   getAll(reload: boolean = false): Observable<Set[]> {
     if(!reload && this.setsCache$.value?.length > 0){
       return of(this.setsCache$.value)

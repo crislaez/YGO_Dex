@@ -9,7 +9,7 @@ import { EntityStatus } from '@ygodex/core/enums/status.enum';
 import { ENVIRONMENT, Environment } from '@ygodex/core/environments/environment.token';
 import { deckImageUrl, gotToTop, orderItemDesc, trackById } from '@ygodex/core/functions/generic.functions';
 import { NotificationService } from '@ygodex/core/notification/notification.service';
-import { TournamentService } from '@ygodex/features/tournament/services/tournament.service';
+import { TournamentService } from '@ygodex/features/tournament';
 import { NoDataComponent } from '@ygodex/ui/no-data';
 import { SpinnerComponent } from '@ygodex/ui/spinner';
 import { Chart, registerables } from 'chart.js';
