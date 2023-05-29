@@ -232,7 +232,7 @@ export class NewsComponent {
   }
 
   openNewModal(news: New): any { // Promise<void>
-    console.log(news)
+    // console.log(news)
     // TODO
   }
 

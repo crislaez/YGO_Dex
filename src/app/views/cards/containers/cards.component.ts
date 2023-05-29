@@ -149,7 +149,7 @@ export class CardsComponent {
             ...(filters ?? {}),
             ...(search ? { name: search } : {})
           });
-          // console.log(filterCards)
+
           return {
             cards: filterCards?.slice(0, slice),
             total: filterCards?.length
@@ -163,7 +163,6 @@ export class CardsComponent {
         })
       )
     })
-    // ,tap(d => console.log(d))
   );
 
   triggerLoadFilter = new EventEmitter<boolean>();
@@ -171,7 +170,7 @@ export class CardsComponent {
     switchMap((reload) => {
       return this.cardFilterService.getAll(reload).pipe(
         catchError(() => {
-          this.notificationService.failure('ERRORS.ERROR_LOAD_CARDS');
+          this.notificationService.failure('ERRORS.ERROR_LOAD_FILTERS');
           return of({})
         })
       )
@@ -207,7 +206,7 @@ export class CardsComponent {
   searchSubmit(event: Event): void{
     event.preventDefault();
     if(!this.platform.is('mobileweb')) Keyboard.hide();
-    this.state = this.changeComponentState({ search: this.search.value!, filters: this.state.filters });
+    this.state = this.changeComponentState({ search: this.search?.value!, filters: this.state?.filters });
 
     this.triggerLoad.next(this.state);
   }

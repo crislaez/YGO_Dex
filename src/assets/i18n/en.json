@@ -60,6 +60,7 @@
     "ERROR_LOAD_SETS":"an error occurred while trying load sets",
     "ERROR_LOAD_DECKS":"an error occurred while trying load decks",
     "ERROR_LOAD_BANLIST":"an error occurred while trying load banlist",
+    "ERROR_LOAD_FILTERS":"an error occurred while trying load filters",
     "ERROR_LOAD_SET":"an error occurred while trying load set",
     "ERROR_LOAD_TOURNAMEMT":"an error occurred while trying load tournament info"
   }
