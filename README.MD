@@ -11,20 +11,26 @@
 * Api https://ygoprodeck.com/api-guide/
 
 
-<!-- <img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_1.png" />
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_1.png" />
 <hr>
-<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygodex_2.png" />
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_2.png" />
 <hr>
-<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygodex_3.png" />
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_3.png" />
 <hr>
-<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygodex_4.png" />
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_4.png" />
 <hr>
-<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygodex_5.png" />
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_5.png" />
 <hr>
-<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygodex_6.png" />
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_6.png" />
 <hr>
-<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygodex_7.png" />
-<hr> -->
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_7.png" />
+<hr>
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_8.png" />
+<hr>
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_9.png" />
+<hr>
+<img src="https://github.com/crislaez/YGO_Dex/blob/master/src/assets/images/ygo_dex_10.png" />
+<hr>
 
 
 ### Que hace el proyecto
