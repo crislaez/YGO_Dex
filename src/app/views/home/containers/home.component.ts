@@ -59,13 +59,13 @@ import { FieldType, HomeInfoIterator } from '../models/home.models';
         </div>
       </div>
 
-      <div class="header" no-border>
+      <!-- <div class="header" no-border>
         <div class="div-center">
           <h2 class="text-color-ligth">{{ 'COMMON.LAST_TOURNAMENT' | translate }}</h2>
         </div>
       </div>
 
-      <!-- <div class="displays-around div-banlist">
+      <div class="displays-around div-banlist">
         <div class="displays-center components-background-seventiary w-96 height-100"
           (click)="redirectTo(CardType.Tournament)">
           <div class="span-bold">{{ 'COMMON.TOURNAMENT' | translate }}</div>
