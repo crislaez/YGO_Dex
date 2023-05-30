@@ -13,14 +13,14 @@ export const routes: Routes = [
     path: 'cards',
     loadChildren: () => import('../../views/cards/cards-routing').then(m => m.routes),
   },
-  {
-    path: 'news',
-    loadChildren: () => import('../../views/news/news-routing').then(m => m.routes),
-  },
-  {
-    path: 'decks',
-    loadChildren: () => import('../../views/decks/decks-routing').then(m => m.routes),
-  },
+  // {
+  //   path: 'news',
+  //   loadChildren: () => import('../../views/news/news-routing').then(m => m.routes),
+  // },
+  // {
+  //   path: 'decks',
+  //   loadChildren: () => import('../../views/decks/decks-routing').then(m => m.routes),
+  // },
   {
     path:'banlist',
     children:[
@@ -40,10 +40,10 @@ export const routes: Routes = [
       }
     ]
   },
-  {
-    path: 'tournament',
-    loadChildren: () => import('../../views/tournament/tournament-routing').then(m => m.routes),
-  },
+  // {
+  //   path: 'tournament',
+  //   loadChildren: () => import('../../views/tournament/tournament-routing').then(m => m.routes),
+  // },
   {
     path: '',
     redirectTo: 'home',

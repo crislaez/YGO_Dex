@@ -455,6 +455,7 @@ ion-header{
       text-overflow: ellipsis;
       font-weight: 800;
       margin: 0 auto !important;
+      margin-left: 4% !important;
 
       >img {
         width: 50%;
@@ -490,15 +491,11 @@ ion-tab-bar{
 form{
   width: 92%;
   margin: 0 auto;
-  // margin: auto;
-  // padding-top: 30px;
-  // margin-top: 10px;
-  // margin-bottom: 10px;
 }
 
 ion-searchbar{
   --box-shadow: none !important;
-  --border-radius: 50px !important;
+  --border-radius: 10px !important;
   transform: scaleY(0.9);
   padding: 0px;
 
@@ -826,6 +823,10 @@ ion-modal{
   margin-top: 50px !important;
 }
 
+.ml-4{
+  margin-left: 4% !important;
+}
+
 .margin-left-45{
   margin-left: 45% !important;
 }
@@ -1091,7 +1092,7 @@ h1{
   margin: 0 auto;
   text-align: start;
   // font-size: 30px;
-  font-size: 9vw !important;
+  font-size: 11vw !important;
   font-weight: 800;
   overflow: hidden;
   white-space: nowrap;
@@ -1100,7 +1101,7 @@ h1{
 
 h2{
   // font-size: 20px;
-  font-size: 5vw !important;
+  font-size: 7vw !important;
   margin-left: 3%;
   margin-right: 3%;
   font-weight: 800;

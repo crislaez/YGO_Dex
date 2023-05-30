@@ -12,7 +12,7 @@ import { filter, map, shareReplay } from 'rxjs';
 @Component({
   selector: 'app-root',
   template: `
-    <ion-app>
+  <ion-app>
     <!-- HEADER  -->
     <ion-header class="ion-no-border" >
       <ion-toolbar *ngIf="(currentSection$ | async) as currentSection">
@@ -27,7 +27,7 @@ import { filter, map, shareReplay } from 'rxjs';
         </ion-back-button>
 
         <!-- title  -->
-        <ion-title class="text-color-light text-center">
+        <ion-title class="text-color-light">
         {{ $any(currentSection)?.title | translate }}
         </ion-title>
 

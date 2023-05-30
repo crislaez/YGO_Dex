@@ -65,12 +65,12 @@ import { FieldType, HomeInfoIterator } from '../models/home.models';
         </div>
       </div>
 
-      <div class="displays-around div-banlist">
+      <!-- <div class="displays-around div-banlist">
         <div class="displays-center components-background-seventiary w-96 height-100"
           (click)="redirectTo(CardType.Tournament)">
           <div class="span-bold">{{ 'COMMON.TOURNAMENT' | translate }}</div>
         </div>
-      </div>
+      </div> -->
 
       <!-- REFRESH -->
       <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
@@ -105,10 +105,10 @@ export class HomeComponent {
   status: EntityStatus = EntityStatus.Initial;
 
   infoIterator: HomeInfoIterator[] = [
-    { slidesPerView: 1, field: 'news', type: CardType.New, title: 'COMMON.NEWS', showMore: true },
+    // { slidesPerView: 1, field: 'news', type: CardType.New, title: 'COMMON.NEWS', showMore: true },
     { slidesPerView: 1.5, field: 'sets',  type: CardType.Set, title: 'COMMON.LAST_SETS', showMore: true },
     { slidesPerView: 2.5, field: 'cards',  type: CardType.Card, title: 'COMMON.CARDS', showMore: true },
-    { slidesPerView: 1.5, field: 'decks',  type: CardType.Deck, title: 'COMMON.DECKS', showMore: true },
+    // { slidesPerView: 1.5, field: 'decks',  type: CardType.Deck, title: 'COMMON.DECKS', showMore: true },
   ];
 
   triggerLoad = new EventEmitter<boolean>();
@@ -191,7 +191,7 @@ export class HomeComponent {
   }
 
   logScrolling({detail:{scrollTop = 0}}): void{
-    this.showButton = scrollTop >= 300;
+   this.showButton = scrollTop >= 300;
   }
 
 }
