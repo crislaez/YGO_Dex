@@ -5,16 +5,15 @@ import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ConfigService } from './app/core/config/config.service';
+import { DEFAULT_LANG, LANGUAGES } from './app/core/constants/generic.constants';
 import { ENVIRONMENT, Environment } from './app/core/environments/environment.token';
 import { DynamicLocaleId, appInitTranslations, createTranslateLoader } from './app/core/i18n';
 import { HttpErrorInterceptor } from './app/core/interceptors/http-error.interceptor';
-import { AppComponent, appConfig, routes } from './app/core/layout';
+import { AppComponent, routes } from './app/core/layout';
 import { environment } from './environments/environment';
 
-function appInitializerFactory(translate: TranslateService, coreConfig: ConfigService): Function {
-  coreConfig.importConfig(appConfig);
-  return () => appInitTranslations(translate, appConfig.Languages, appConfig.DefaultLang);
+function appInitializerFactory(translate: TranslateService): Function {
+  return () => appInitTranslations(translate, Object.keys(LANGUAGES || {}), DEFAULT_LANG);
 };
 
 
@@ -27,7 +26,7 @@ bootstrapApplication(AppComponent, {
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializerFactory,
-      deps: [TranslateService, ConfigService],
+      deps: [TranslateService],
       multi: true
     },
     {

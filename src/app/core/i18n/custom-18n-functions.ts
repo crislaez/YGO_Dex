@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Preferences  } from '@capacitor/preferences';
+import { APP_LANG_KEY } from '../constants/generic.constants';
 
-const LANG = 'YGODexLang';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -12,7 +12,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 
 export const appInitTranslations = async (translate: TranslateService, languages: string[], defaultLang: string): Promise<any> => {
-  const item = await Preferences.get({key: LANG});
+  const item = await Preferences.get({key: APP_LANG_KEY});
   const storeLang = item?.value || '';
   const currentDefaultLang = storeLang || defaultLang;
 
@@ -25,5 +25,5 @@ export const appInitTranslations = async (translate: TranslateService, languages
 }
 
 const saveLang = async (lang: string) => {
-  await Preferences.set({key: LANG, value: lang})
+  await Preferences.set({key: APP_LANG_KEY, value: lang})
 }

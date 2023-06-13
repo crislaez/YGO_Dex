@@ -1,3 +1,11 @@
+export const APP_LANG_KEY = 'YGODexLang';
+
+export const DEFAULT_LANG = 'en';
+
+export const LANGUAGES = {
+  en:'en'
+};
+
 export const ERROR_IMAGE = 'assets/images/error.png';
 
 export const NO_DATA_IMAGE = 'assets/images/empty.png';
